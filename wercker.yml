@@ -43,8 +43,12 @@ build-centos65:
             jobs: 4
 
         - script:
-            name: build CentOS 6.5
-            code: ./ci/build.sh centos65
+            name: build CentOS 6.5 (using node_enabled.yml)
+            code: ./ci/build.sh centos65 enabled
+
+        - script:
+            name: build CentOS 6.5 (using node_disabled.yml)
+            code: ./ci/build.sh centos65 disabled
 
 build-centos70:
     <<: *default
@@ -57,8 +61,12 @@ build-centos70:
             jobs: 4
 
         - script:
-            name: build CentOS 7.0
-            code: ./ci/build.sh centos70
+            name: build CentOS 7.0 (using node_enabled.yml)
+            code: ./ci/build.sh centos70 enabled
+
+        - script:
+            name: build CentOS 7.0 (using node_disabled.yml)
+            code: ./ci/build.sh centos70 disabled
 
 build-debian8:
     <<: *default
@@ -71,5 +79,9 @@ build-debian8:
             jobs: 4
 
         - script:
-            name: build Debian 8
-            code: ./ci/build.sh debian8
+            name: build Debian 8 (using node_enabled.yml)
+            code: ./ci/build.sh debian8 enabled
+
+        - script:
+            name: build Debian 8 (using node_disabled.yml)
+            code: ./ci/build.sh debian8 disabled

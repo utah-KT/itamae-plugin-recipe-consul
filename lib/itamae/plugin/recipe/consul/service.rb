@@ -4,7 +4,7 @@ include_recipe "consul::service::definitions"
 directory "/etc/consul.d"
 
 case node[:platform]
-when "debian"
+when "debian", "ubuntu"
   include_recipe "consul::service::debian"
 
 when "redhat"
